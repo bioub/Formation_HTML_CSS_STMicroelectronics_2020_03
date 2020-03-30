@@ -4,9 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Romain Bohdanowicz - Mon CV</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Commentaire (pas de // ou <!-- -->) */
+
+      /*
+      Syntaxe générale d'un fichier CSS
+
+      selecteur {
+        propriete: valeur;
+        propriete: valeur;
+        propriete: valeur;
+        propriete: valeur;
+      }
+      */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* selecteur ancetre descendant */
+      /* spécificité : 0 0 1 */
+      h2, h3, h4 {
+        color: orangered;
+      }
+
+      /* selecteur par id */
+      /* spécificité : 1 0 0 */
+      #description {
+        background-color: lightgoldenrodyellow;
+      }
+
+      /* spécificité : 1 0 1 */
+      #description h2 {
+        color: green;
+      }
+
+      section.block {
+
+      }
+
+      /* spécificité : 1 0 3 */
+      #description > h2 + p > b {
+      }
+
+      h2:first-child {
+
+      }
+
+      h2:first-of-type {
+
+      }
+
+      section.description.block {
+
+      }
+
+      section[class="description block"] {
+
+      }
+
+      input[type="checkbox"][checked] {}
+      input[type="checkbox"]:checked {}
+
+      section:target {
+        background-color: hotpink;
+      }
+
+      body > h1[style] {
+        color: red !important;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Romain Bohdanowicz</h1>
+    <h1 style="color: blueviolet;">Romain Bohdanowicz</h1>
     <nav>
       <h2>Sommaire</h2>
       <ul>
@@ -25,6 +96,19 @@
       </ul>
     </nav>
     <section id="description" class="description block">
+      <p>
+        Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Repellat
+        minus possimus laboriosam ipsa labore, voluptatum voluptas fuga
+        perferendis? Explicabo corporis commodi eius deserunt incidunt
+        consectetur facere qui aut dicta quidem.
+      </p>
+      <h2>Description</h2>
+      <p>
+        Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Repellat
+        minus possimus laboriosam ipsa labore, voluptatum voluptas fuga
+        perferendis? Explicabo corporis commodi eius deserunt incidunt
+        consectetur facere qui aut dicta quidem.
+      </p>
       <h2>Description</h2>
       <p>
         Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Repellat

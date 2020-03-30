@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "HelloHTML"
+		},
+		{
+			"path": "HelloCSS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HelloCSS"
+	}
+}

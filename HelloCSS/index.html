@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>Hello HTML</title>
+    <style>
+      a[rel~=external]::after {
+        content: ' (externe)'
+      }
+    </style>
   </head>
 
   <body>
     <h1>Hello HTML !!!!</h1>
     <p>Ma première page HTML</p>
-    <a href="index.html">Mon Lien</a>
+    <a rel="internal" href="index.html">Mon Lien</a>
+    <a rel="external nofollow" href="https://www.google.fr/">Google</a>
   </body>
 </html>

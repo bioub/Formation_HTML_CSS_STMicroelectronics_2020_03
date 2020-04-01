@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* * {
+      box-sizing: border-box;
+    } */
+
+    /*
+    Tailles par défaut :
+    block : largeur contenant / hauteur contenu
+    inline : largeur contenu / hauteur contenu
+    */
+    /*
+    Pour modifier la largeur :
+    block : propriété width et height
+    inline : impossible
+    */
+    div {
+      background-color: orange;
+      /* background raccouci de background-color... */
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 5px solid red;
+      /* border raccourci de :
+      border-width: 5px;
+      border-style: solid;
+      border-color: red;
+      */
+      /*
+      border-width raccourci de :
+      border-top-width: 5px;
+      border-right-width: 5px;
+      border-bottom-width: 5px;
+      border-left-width: 5px;
+      idem pour border-style et border-color
+      */
+      margin: 20px;
+      /* margin raccourci de :
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      idem pour padding
+      */
+      margin: 20px 10px 5px 30px;
+      /* margin raccourci de (dans l'ordre des aiguilles d'une montre)
+      margin-top: 20px;
+      margin-right: 10px;
+      margin-bottom: 5px;
+      margin-left: 30px;
+      idem pour padding
+      */
+      margin: 20px 10px;
+      /* margin raccourci de (dans l'ordre des aiguilles d'une montre)
+      margin-top: 20px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      idem pour padding
+      */
+      margin: 20px 10px 30px;
+      /* margin raccourci de (dans l'ordre des aiguilles d'une montre)
+      margin-top: 20px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+      margin-left: 10px;
+      idem pour padding
+      */
+    }
+
+    div:nth-of-type(2) {
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    span {
+      background-color: palegreen;
+      /* display: block;
+      width: 100px;
+      height: 100px; */
+    }
+  </style>
+</head>
+<body>
+  <div>block 1</div>
+  <div>block 2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis totam laudantium atque praesentium blanditiis doloribus quas molestias iusto, at dolore ratione magni quos enim nesciunt sapiente soluta hic dignissimos modi?</div>
+  <span>inline 1</span>
+  <span>inline 2</span>
+</body>
+</html>

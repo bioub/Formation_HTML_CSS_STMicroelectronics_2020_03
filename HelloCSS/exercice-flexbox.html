@@ -38,7 +38,7 @@
 
       /* begin header */
       header {
-        position: relative;
+        display: flex;
         padding: 10px;
         background-color: lightskyblue;
       }
@@ -48,16 +48,14 @@
       }
 
       header .menu-login {
-        position: absolute;
-        top: 0;
-        right: 0;
+        margin-left: auto;
+        margin-bottom: auto;
         background-color: lightgreen;
         padding: 10px;
       }
 
-
       header .menu-login span:not(:last-child)::after {
-        content: ' | ';
+        content: " | ";
       }
 
       /*
@@ -65,20 +63,17 @@
         float left par des flexbox
        */
 
-      .middle::after {
-        content: '';
-        display: block;
-        clear: both;
+      .middle {
+        display: flex;
       }
 
       .middle > * {
-        float: left;
         padding: 10px;
       }
 
       aside {
         background-color: lightsalmon;
-        width: 30%;
+        width: 200px;
       }
 
       aside a {
@@ -100,7 +95,7 @@
       }
 
       main {
-        width: 70%
+        flex: 1;
       }
 
       main .breadcrumb {
@@ -112,26 +107,35 @@
       }
 
       main .breadcrumb li:not(:last-child)::after {
-        content: ' > '
+        content: " > ";
       }
 
-      .gallery::after {
-        content: '';
-        display: block;
-        clear: both;
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
       }
 
-      .gallery > * {
-        float: left;
+      .gallery > div {
         width: calc(33.33% - (24px / 3));
         height: 200px;
         background-color: hotpink;
         margin-bottom: 12px;
         margin-right: 12px;
+        display: flex;
       }
 
-      .gallery > *:nth-child(3n) {
+      .gallery > div:nth-child(3n) {
         margin-right: 0;
+      }
+
+      .gallery > div > div {
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
       }
     </style>
   </head>
@@ -144,8 +148,8 @@
             <a href="#">Login</a>
           </span>
           <span>
-          <a href="#">Register</a>
-        </span>
+            <a href="#">Register</a>
+          </span>
         </nav>
       </header>
       <div class="middle">
@@ -179,12 +183,24 @@
             </ul>
           </nav>
           <section class="gallery">
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
           </section>
         </main>
       </div>

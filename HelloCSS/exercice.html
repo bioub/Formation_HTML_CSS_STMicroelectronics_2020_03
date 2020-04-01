@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mise en page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: red;
+        user-select: none;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* font-size: 16px; */
+        /* font-weight: bold; */
+        /* font-style: italic; */
+        /* text-decoration: none; */
+      }
+
+      a {
+        color: darkblue;
+        text-decoration: none;
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* begin header */
+      header {
+        position: relative;
+        padding: 10px;
+        background-color: lightskyblue;
+      }
+
+      header h1 {
+        margin-top: 0;
+      }
+
+      header .menu-login {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: lightgreen;
+        padding: 10px;
+      }
+
+
+      header .menu-login span:not(:last-child)::after {
+        content: ' | ';
+      }
+ /* header .menu-login a + a::before {
+        content: ' | ';
+      } */
+      /* end header */
+
+      .middle::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .middle > * {
+        float: left;
+        padding: 10px;
+      }
+
+      aside {
+        background-color: lightsalmon;
+        width: 30%;
+      }
+
+      aside a {
+        display: block;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background-color: indianred;
+        margin-bottom: 10px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        transition: all linear 400ms;
+      }
+
+      aside a:hover {
+        color: greenyellow;
+        background-color: lightblue;
+      }
+
+      main {
+        width: 70%
+      }
+
+      main .breadcrumb {
+        margin-bottom: 10px;
+      }
+
+      main .breadcrumb li {
+        display: inline;
+      }
+
+      main .breadcrumb li:not(:last-child)::after {
+        content: ' > '
+      }
+
+      .gallery::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .gallery > * {
+        float: left;
+        width: calc(33.33% - (24px / 3));
+        height: 200px;
+        background-color: hotpink;
+        margin-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .gallery > *:nth-child(3n) {
+        margin-right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Titre</h1>
+        <nav class="menu-login">
+          <span>
+            <a href="#">Login</a>
+          </span>
+          <span>
+          <a href="#">Register</a>
+        </span>
+        </nav>
+      </header>
+      <div class="middle">
+        <aside>
+          <nav class="menu-main">
+            <ul>
+              <li>
+                <a href="#">Lien 1</a>
+              </li>
+              <li>
+                <a href="#">Lien 2</a>
+              </li>
+              <li>
+                <a href="#">Lien 3</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <main>
+          <nav class="breadcrumb">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Catégorie</a>
+              </li>
+              <li>
+                <a href="#">Produit</a>
+              </li>
+            </ul>
+          </nav>
+          <section class="gallery">
+            <div>img</div>
+            <div>img</div>
+            <div>img</div>
+            <div>img</div>
+            <div>img</div>
+            <div>img</div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

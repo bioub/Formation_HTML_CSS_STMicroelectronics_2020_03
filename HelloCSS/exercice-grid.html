@@ -34,6 +34,15 @@
       .container {
         width: 1200px;
         margin: 0 auto;
+
+        display: grid;
+        /* Exercice :
+        Créer une grille de 2 lignes et 2 colonnes
+        La colonne 1 fait 200px de large, la colonne 2 le reste
+        Le 2 lignes prennent la hauteur de leur contenu (valeur auto)
+
+        Placer le header sur les 2 colonnes de la première ligne
+        */
       }
 
       /* begin header */
@@ -60,22 +69,9 @@
         content: " | ";
       }
 
-      /*
-        Remplacer .middle::after et tous les
-        float left par des flexbox
-       */
-
-      .middle {
-        display: flex;
-      }
-
-      .middle > * {
-        padding: 10px;
-      }
-
       aside {
         background-color: lightsalmon;
-        width: 200px;
+        padding: 10px;
       }
 
       aside a {
@@ -97,7 +93,7 @@
       }
 
       main {
-        flex: 1;
+        padding: 10px;
       }
 
       main .breadcrumb {
@@ -113,21 +109,23 @@
       }
 
       .gallery {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-gap: 12px;
+        /*
+        Exercice : Créer une grille de 3 colonnes de même largeur
+        https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout/Placement_automatique_sur_une_grille_CSS
+
+        Créer un nombre de ligne automatique avec la propriété
+        grid-auto-rows
+        https://developer.mozilla.org/fr/docs/Web/CSS/grid-auto-rows
+        */
       }
 
       .gallery > div {
-        width: calc(33.33% - (24px / 3));
-        height: 200px;
-        background-color: hotpink;
-        margin-bottom: 12px;
-        margin-right: 12px;
-        display: flex;
-      }
 
-      .gallery > div:nth-child(3n) {
-        margin-right: 0;
+        background-color: hotpink;
+
+        display: flex;
       }
 
       .gallery > div > div {
@@ -154,58 +152,56 @@
           </span>
         </nav>
       </header>
-      <div class="middle">
-        <aside>
-          <nav class="menu-main">
-            <ul>
-              <li>
-                <a href="#">Lien 1</a>
-              </li>
-              <li>
-                <a href="#">Lien 2</a>
-              </li>
-              <li>
-                <a href="#">Lien 3</a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-        <main>
-          <nav class="breadcrumb">
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Catégorie</a>
-              </li>
-              <li>
-                <a href="#">Produit</a>
-              </li>
-            </ul>
-          </nav>
-          <section class="gallery">
-            <div>
-              <div></div>
-            </div>
-            <div>
-              <div></div>
-            </div>
-            <div>
-              <div></div>
-            </div>
-            <div>
-              <div></div>
-            </div>
-            <div>
-              <div></div>
-            </div>
-            <div>
-              <div></div>
-            </div>
-          </section>
-        </main>
-      </div>
+      <aside>
+        <nav class="menu-main">
+          <ul>
+            <li>
+              <a href="#">Lien 1</a>
+            </li>
+            <li>
+              <a href="#">Lien 2</a>
+            </li>
+            <li>
+              <a href="#">Lien 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <nav class="breadcrumb">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Catégorie</a>
+            </li>
+            <li>
+              <a href="#">Produit</a>
+            </li>
+          </ul>
+        </nav>
+        <section class="gallery">
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>

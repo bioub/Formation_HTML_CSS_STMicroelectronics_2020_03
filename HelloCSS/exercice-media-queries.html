@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mise en page</title>
+    <style>
+      /*
+      Exercice :
+      - Entre 820 et 1220px de viewport
+        .container -> width: 800px
+        Dans la gallerie ne mettre que 2 colonnes au lieu de 3
+      - A 820px de viewport ou moins
+      .container -> width: 100%
+      Dans la gallerie ne mettre que 1 colonne
+      */
+
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: red;
+        user-select: none;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* font-size: 16px; */
+        /* font-weight: bold; */
+        /* font-style: italic; */
+        /* text-decoration: none; */
+      }
+
+      a {
+        color: darkblue;
+        text-decoration: none;
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+
+        display: grid;
+        /* Exercice :
+        Créer une grille de 2 lignes et 2 colonnes
+        La colonne 1 fait 200px de large, la colonne 2 le reste
+        Le 2 lignes prennent la hauteur de leur contenu (valeur auto)
+
+        Placer le header sur les 2 colonnes de la première ligne
+        */
+        /* grid-template-rows: auto auto;
+        grid-template-columns: 200px 1fr; */
+        grid-template: "h h" auto
+                       "a m" auto / 200px 1fr
+      }
+
+      /* begin header */
+      header {
+        grid-area: h;
+        display: flex;
+        padding: 10px;
+        background-color: lightskyblue;
+        /* grid-column-end: span 2; */
+      }
+
+      header h1 {
+        margin-top: 0;
+      }
+
+      header .menu-login {
+        margin-left: auto;
+        margin-bottom: auto;
+        background-color: lightgreen;
+        padding: 10px;
+        margin-top: -10px;
+        margin-right: -10px;
+      }
+
+      header .menu-login span:not(:last-child)::after {
+        content: " | ";
+      }
+
+      aside {
+        grid-area: a;
+        background-color: lightsalmon;
+        padding: 10px;
+      }
+
+      aside a {
+        display: block;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background-color: indianred;
+        margin-bottom: 10px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        transition: all linear 400ms;
+      }
+
+      aside a:hover {
+        color: greenyellow;
+        background-color: lightblue;
+      }
+
+      main {
+        grid-area: m;
+        padding: 10px;
+      }
+
+      main .breadcrumb {
+        margin-bottom: 10px;
+      }
+
+      main .breadcrumb li {
+        display: inline;
+      }
+
+      main .breadcrumb li:not(:last-child)::after {
+        content: " > ";
+      }
+
+      .gallery {
+        display: grid;
+        grid-gap: 12px;
+        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+        /*
+        Exercice : Créer une grille de 3 colonnes de même largeur
+        https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout/Placement_automatique_sur_une_grille_CSS
+
+        Créer un nombre de ligne automatique avec la propriété
+        grid-auto-rows
+        https://developer.mozilla.org/fr/docs/Web/CSS/grid-auto-rows
+        */
+      }
+
+      .gallery > div {
+        background-color: hotpink;
+        display: flex;
+      }
+
+      .gallery > div > div {
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Titre</h1>
+        <nav class="menu-login">
+          <span>
+            <a href="#">Login</a>
+          </span>
+          <span>
+            <a href="#">Register</a>
+          </span>
+        </nav>
+      </header>
+      <aside>
+        <nav class="menu-main">
+          <ul>
+            <li>
+              <a href="#">Lien 1</a>
+            </li>
+            <li>
+              <a href="#">Lien 2</a>
+            </li>
+            <li>
+              <a href="#">Lien 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <nav class="breadcrumb">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Catégorie</a>
+            </li>
+            <li>
+              <a href="#">Produit</a>
+            </li>
+          </ul>
+        </nav>
+        <section class="gallery">
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

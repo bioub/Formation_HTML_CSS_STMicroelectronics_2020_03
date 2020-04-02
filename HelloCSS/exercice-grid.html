@@ -43,13 +43,19 @@
 
         Placer le header sur les 2 colonnes de la première ligne
         */
+        /* grid-template-rows: auto auto;
+        grid-template-columns: 200px 1fr; */
+        grid-template: "h h" auto
+                       "a m" auto / 200px 1fr
       }
 
       /* begin header */
       header {
+        grid-area: h;
         display: flex;
         padding: 10px;
         background-color: lightskyblue;
+        /* grid-column-end: span 2; */
       }
 
       header h1 {
@@ -70,6 +76,7 @@
       }
 
       aside {
+        grid-area: a;
         background-color: lightsalmon;
         padding: 10px;
       }
@@ -93,6 +100,7 @@
       }
 
       main {
+        grid-area: m;
         padding: 10px;
       }
 
@@ -111,6 +119,9 @@
       .gallery {
         display: grid;
         grid-gap: 12px;
+        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
         /*
         Exercice : Créer une grille de 3 colonnes de même largeur
         https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout/Placement_automatique_sur_une_grille_CSS
@@ -122,9 +133,7 @@
       }
 
       .gallery > div {
-
         background-color: hotpink;
-
         display: flex;
       }
 
@@ -182,6 +191,9 @@
           </ul>
         </nav>
         <section class="gallery">
+          <div>
+            <div></div>
+          </div>
           <div>
             <div></div>
           </div>

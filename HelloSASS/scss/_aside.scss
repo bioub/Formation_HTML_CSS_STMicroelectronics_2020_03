@@ -1,0 +1,24 @@
+
+aside {
+  grid-area: a;
+  background-color: $aside-bg-color;
+  padding: $gap-width;
+}
+
+aside a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: indianred;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: all linear 400ms;
+}
+
+aside a:hover {
+  color: greenyellow;
+  background-color: lightblue;
+}

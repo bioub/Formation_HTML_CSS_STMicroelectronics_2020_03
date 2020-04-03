@@ -1,0 +1,11 @@
+main .breadcrumb {
+  margin-bottom: 10px;
+}
+
+main .breadcrumb li {
+  display: inline;
+}
+
+main .breadcrumb li:not(:last-child)::after {
+  content: " > ";
+}

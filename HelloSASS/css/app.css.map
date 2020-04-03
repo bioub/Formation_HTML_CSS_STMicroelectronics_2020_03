@@ -1,0 +1,32 @@
+{
+	"version": 3,
+	"file": "app.css",
+	"sources": [
+		"../scss/app.scss",
+		"../scss/_variables.scss",
+		"../scss/_reset.scss",
+		"../scss/_elements.scss",
+		"../scss/_container.scss",
+		"../scss/_header.scss",
+		"../scss/_aside.scss",
+		"../scss/_main.scss",
+		"../scss/_breadcrumb.scss",
+		"../scss/_gallery.scss",
+		"../scss/_utilities.scss"
+	],
+	"sourcesContent": [
+		"// Inclus les sous-fichiers\n// en suivant la méthodologie ITCSS\n\n@import 'variables';\n@import 'reset';\n@import 'elements';\n@import 'container';\n@import 'header';\n@import 'aside';\n@import 'main';\n@import 'breadcrumb';\n@import 'gallery';\n@import 'utilities';\n",
+		"$header-bg-color: darkblue;\n$aside-bg-color: lightsalmon;\n$gap-width: 12px;\n\n$viewport-large: 1220px;\n$viewport-small: 820px;\n",
+		"* {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  color: black;\n  user-select: none;\n  /* font-family: Arial, Helvetica, sans-serif; */\n  /* font-size: 16px; */\n  /* font-weight: bold; */\n  /* font-style: italic; */\n  /* text-decoration: none; */\n}\n",
+		"a {\n  color: darkblue;\n  text-decoration: none;\n}\n\nnav ul {\n  margin: 0;\n  padding: 0;\n  list-style-type: none;\n}\n",
+		".container {\n  width: 1200px;\n  margin: 0 auto;\n\n  display: grid;\n  /* grid-template-rows: auto auto;\n          grid-template-columns: 200px 1fr; */\n  grid-template:\n    \"h h\" auto\n    \"a m\" auto / 200px 1fr;\n}\n\n@media (max-width: 1220px) {\n  .container {\n    width: 800px;\n  }\n}\n\n@media (max-width: 820px) {\n  .container {\n    width: 100%;\n    grid-template:\n      \"h\"\n      \"m\"\n      \"a\";\n  }\n}\n",
+		"header {\n  grid-area: h;\n  display: flex;\n  padding: $gap-width;\n  background-color: $header-bg-color;\n\n  h1 {\n    margin-top: 0;\n  }\n\n  .menu-login {\n    margin-left: auto;\n    margin-bottom: auto;\n    background-color: lightgreen;\n    padding: 10px;\n    margin-top: -10px;\n    margin-right: -10px;\n\n    span:not(:last-child)::after {\n      content: \" | \";\n    }\n  }\n}\n",
+		"\naside {\n  grid-area: a;\n  background-color: $aside-bg-color;\n  padding: $gap-width;\n}\n\naside a {\n  display: block;\n  width: 100%;\n  height: 30px;\n  line-height: 30px;\n  background-color: indianred;\n  margin-bottom: 10px;\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  transition: all linear 400ms;\n}\n\naside a:hover {\n  color: greenyellow;\n  background-color: lightblue;\n}\n",
+		"main {\n  grid-area: m;\n  padding: $gap-width;\n}\n",
+		"main .breadcrumb {\n  margin-bottom: 10px;\n}\n\nmain .breadcrumb li {\n  display: inline;\n}\n\nmain .breadcrumb li:not(:last-child)::after {\n  content: \" > \";\n}\n",
+		".gallery {\n  display: grid;\n  grid-gap: $gap-width;\n  gap: $gap-width;\n  grid-template-columns: repeat(3, 1fr);\n  grid-auto-rows: 200px;\n\n  @media (max-width: 1220px) {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  @media (max-width: 820px) {\n    grid-template-columns: repeat(1, 1fr);\n  }\n\n  > div {\n    background-color: hotpink;\n    display: flex;\n\n    > div {\n      margin: auto;\n      width: 100px;\n      height: 100px;\n      background-color: lightgreen;\n    }\n  }\n}\n",
+		""
+	],
+	"names": [],
+	"mappings": "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"
+}

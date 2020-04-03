@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mise en page</title>
     <style>
-      * {
+      /* ITCSS Generics */
+      *, *::before, *::after  {
         box-sizing: border-box;
       }
 
+      /* ITCSS Elements */
       body {
-        /* height: 100vh; */
-        /*
-          px, %, vh, vw (boites),
-          em, rem (police + marge haut+bas texte)
-        */
         margin: 0;
         color: red;
         user-select: none;
-        /* font-family: 'Open Sans', Helvetica, sans-serif; */
-        font-size: 16px;
-        line-height: 2rem;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* font-size: 16px; */
         /* font-weight: bold; */
         /* font-style: italic; */
         /* text-decoration: none; */
@@ -40,52 +36,56 @@
       .container {
         width: 1200px;
         margin: 0 auto;
-        position: relative;
-        /* top: 50%;
-        transform: translateY(-50%); */
-        /* transition: transform 400ms ease-in; */
-        /* easings.net */
       }
 
-      .container:hover {
-        /* transform: rotate(30deg); */
-      }
-
-      /* begin header */
-      header {
-        position: relative;
+      /* 0, 1, 0 */
+      .header {
+        display: flex;
         padding: 10px;
         background-color: lightskyblue;
       }
 
-      header h1 {
+      /* 0, 1, 0 */
+      .header_title {
         margin-top: 0;
       }
 
-      header .menu-login {
-        position: absolute;
-        top: 0;
-        right: 0;
+      /* 0, 1, 0 */
+      .header_menu {
+        margin-left: auto;
+        margin-bottom: auto;
         background-color: lightgreen;
         padding: 10px;
+        margin-top: -10px;
+        margin-right: -10px;
       }
 
-      header .menu-login span:not(:last-child)::after {
+      /* 0, 1, 1 */
+      .header_menu-item::after {
         content: " | ";
       }
-      /* header .menu-login a + a::before {
-        content: ' | ';
-      } */
-      /* end header */
+
+      /* 0, 1, 1 */
+      .header_menu-item--last::after {
+        content: "";
+      }
+
+      /*
+        Remplacer .middle::after et tous les
+        float left par des flexbox
+       */
+
+      .middle {
+        display: flex;
+      }
 
       .middle > * {
-        float: left;
         padding: 10px;
       }
 
       aside {
         background-color: lightsalmon;
-        width: 30%;
+        width: 200px;
       }
 
       aside a {
@@ -98,10 +98,7 @@
         text-align: center;
         color: white;
         font-weight: bold;
-        transition: color 400ms linear, background-color 400ms linear 400ms;
-        /* transition-property: all;
-        transition-duration: 400ms;
-        transition-timing-function: linear; */
+        transition: all linear 400ms;
       }
 
       aside a:hover {
@@ -110,7 +107,7 @@
       }
 
       main {
-        width: 70%;
+        flex: 1;
       }
 
       main .breadcrumb {
@@ -125,43 +122,49 @@
         content: " > ";
       }
 
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-
-      .gallery > * {
-        float: left;
-        width: calc(33.33% - (12px * 2 / 3));
+      .gallery > div {
+        width: calc(33.33% - (24px / 3));
         height: 200px;
         background-color: hotpink;
         margin-bottom: 12px;
         margin-right: 12px;
+        display: flex;
       }
 
-      .gallery > *:nth-child(3n) {
+      .gallery > div:nth-child(3n) {
         margin-right: 0;
       }
 
-      /* ITCSS Utilities */
-      .clearfix::after {
-        content: "" !important;
-        display: block !important;
-        clear: both !important;
+      .gallery > div > div {
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Titre</h1>
-        <nav class="menu-login">
-          <span>
+      <header class="header">
+        <h1 class="header_title">Titre</h1>
+        <nav class="header_menu">
+          <span class="header_menu-item">
             <a href="#">Login</a>
           </span>
-          <span>
+          <span class="header_menu-item header_menu-item--last">
             <a href="#">Register</a>
           </span>
         </nav>
       </header>
-      <div class="middle clearfix">
+      <div class="middle">
         <aside>
           <nav class="menu-main">
             <ul>
@@ -191,13 +194,25 @@
               </li>
             </ul>
           </nav>
-          <section class="gallery clearfix">
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
-            <div>img</div>
+          <section class="gallery">
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
           </section>
         </main>
       </div>

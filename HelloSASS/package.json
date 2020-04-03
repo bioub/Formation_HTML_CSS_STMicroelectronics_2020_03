@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "serve:dev": "live-server",
+    "watch:scss": "node-sass --watch --recursive --output css --source-map true --source-map-contents scss",
+    "build:scss": "node-sass --output-style compressed scss/app.scss > css/app.css",
+    "format:scss": "prettier scss/*.scss --write"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.1",
+    "prettier": "^2.0.2"
+  }
+}

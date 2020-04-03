@@ -5,9 +5,12 @@
 		},
 		{
 			"path": "HelloCSS"
+		},
+		{
+			"path": "HelloSASS"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "HelloCSS"
+		"liveServer.settings.multiRootWorkspaceName": "HelloSASS"
 	}
 }
